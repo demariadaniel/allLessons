@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <form
+    id="profileViewer" 
+    action="www.dan.com/viewProfile"
+    method="GET"> 
+  <!-- Action specifies address of server, method specifies HTTP method for request -->
+
+    <input name="userName" type="text" />
+    <input name="acctType" type="text" />
+  <!-- In a GET request, information typed in these fields is appended to the URL -->
+  <!-- 'name' represents the key, user input represents the value  -->
+  <!-- Result looks like this: -->
+  <!-- http://www.dan.com/viewProfile&userName=ddemaria&acctType=student -->
+
+    <button type="submit">View User's Page</button>
+  <!-- ^^^ Clicking this button triggers a GET request to this URL -->
+  </form>
+
+  <!-- The server receives data something like this:  -->
+  <!-- request.params = {userName : 'ddemaria', acctType: 'student'} -->
+
+
+  <!-- POST request by comparison would send data to: -->
+  <!-- www.dan.com/viewProfile -->
+  <!-- On the server, data would be accessed by request.body -->
+
+<script>
+
+  $('#profileViewer').submit(function(event){
+      event.preventDefault();
+      // This line prevents the page from refreshing, which is necessary if you want
+      // to save any information the user has entered on the page
+  })
+
+</script>
+
+</body>
+</html>

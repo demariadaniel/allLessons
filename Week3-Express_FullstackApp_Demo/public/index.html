@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>FullStack Demo</title>
+
+  <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+  <style>
+    .box {
+      border: 1px solid black;
+    }
+
+    .input, .output {
+      margin: 3px;
+      display: inline-block;
+      width: 45vw;
+      vertical-align: top;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <form
+      action="http://localhost:8080/newUser"
+      method="POST"
+      class="box">
+      <h2>Make a New User</h2>
+      <h4>
+        <label for="username">
+          User Name
+        </label>
+      </h4>
+      <input id="username" name="username" type="text">
+      <h4>
+        <label for="course">
+          Primary Course
+        </label>
+      </h4>
+      <select name="course" id="course">
+        <option value="Web Dev">Web Development</option>
+        <option value="User Exp">User Experience</option>
+        <option value="Data Sci">Data Science</option>
+      </select>
+      <h4>
+        <label for="pet">
+          Pet
+        </label>
+      </h4>
+      <select name="pet" id="pet">
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="fish">Fish</option>
+        <option value="rabbit">Rabbit</option>
+      </select>
+      <div>
+        <button type="submit">
+          Add A User
+        </button>
+      </div>
+    </form>
+
+    <div class="box input">
+      <h2>Get Users</h2>
+      <button id="userBtn">Go!</button>
+    </div>
+
+    <div class="box input">
+        <h2>Get Puppies</h2>
+        <button>Go!</button>
+    </div>
+
+    <div id="studentOut" class="box output">
+      <h2>Students</h2>
+    </div>
+
+    <div class="box output">
+        <h2>Puppies</h2>
+    </div>
+  </div>
+</body>
+<script>
+  $('form').submit((event)=>{
+    event.preventDefault();
+
+    let username = $('#username').val();
+    let course = $('#course').val();
+    let pet = $('#pet').val();
+
+    let postBody = {username: username, course: course, pet: pet}
+
+    $.post('http://localhost:8080/newUser', postBody,
+      (response)=>{
+        console.log(response)
+      })
+  })
+
+  $('#userBtn').click(()=>{
+    $.get('http://localhost:8080/users',
+      (response)=>{
+        console.log(response.data)
+        for (let i = 0; i < response.data.length; i++){
+          $('#studentOut').append(
+            `<div><li>${response.data[i].username}</li>
+                  <li>${response.data[i].course}</li>
+                  <li>${response.data[i].pet}</li></div>`)
+                }
+        }
+      )
+  })
+
+</script>
+</html>

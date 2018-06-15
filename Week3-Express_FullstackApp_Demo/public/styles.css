@@ -1,0 +1,10 @@
+.box {
+  border: 1px solid black;
+}
+
+.input, .output {
+  margin: 3px;
+  display: inline-block;
+  width: 45vw;
+  vertical-align: top;
+}

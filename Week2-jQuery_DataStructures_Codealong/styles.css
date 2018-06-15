@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 1vw;
+  width: 300px;
+  vertical-align: top;
+}
+
+.false {
+  background-color: red
+}
+
+.true {
+  background-color: blue
+}
+
+#a, #d, #g, #j {
+ background-color: aquamarine ;
+}
+
+#b, #e, #h, #k {
+  background-color: springgreen ;
+}
+
+#c, #f, #i {
+  background-color: seagreen ;
+}
+
+#e, #f, #g, #h {
+  display: inline-block;
+  width: 40%;
+}
+
+#f, #h {
+  float: right;
+}

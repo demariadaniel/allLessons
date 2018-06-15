@@ -1,0 +1,11 @@
+.entryForm {
+  border: 1px solid black;
+  width: 40vw;
+  height: 40vw;
+}
+
+.jrnlEntry {
+  border: 2px solid lightgrey;
+  border-radius: 5px;
+  background-color: gold;
+}
