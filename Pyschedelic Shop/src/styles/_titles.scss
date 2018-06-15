@@ -1,0 +1,96 @@
+.logos--container {
+  position: relative;
+}
+
+%App-logo {
+  position: absolute;
+  left: 0vw;
+  top: -25em;
+  z-index: 1;
+}
+
+.App-logo-A {
+  @extend %App-logo; 
+  animation: App-logo-spin-a infinite 20s linear;
+}
+
+.App-logo-B {
+  @extend %App-logo;
+  opacity: .66;
+  animation: App-logo-spin-b infinite 15s linear;
+}
+
+.App-logo-C {
+  @extend %App-logo;
+  opacity: .33;
+  animation: App-logo-spin-c infinite 10s linear;
+}
+
+.App-title--white {
+  position: absolute;
+  font-size: 4em;
+  color: white;
+  margin: 0;
+  top: 0;
+  left: 24.5%;
+  animation: App-title-shift infinite 20s linear;
+}
+
+.App-title {
+  font-size: 4em;
+  position: relative;
+  z-index: 4;
+  -webkit-text-fill-color: transparent;
+  animation: App-border-glow infinite 20s linear;
+  mix-blend-mode: overlay;
+  background: $color0;
+  height: 2.5em;
+  margin: 0;
+}
+
+.App-title--subtitle {
+  margin: 0;
+  -webkit-text-fill-color: $color1;
+  mix-blend-mode: difference;
+  background: $color0;
+  position: relative;
+  z-index: 4;
+  top: -1.25em;
+}
+
+@keyframes App-logo-spin-a {
+  0%   { transform: rotate(0deg);
+         opacity: .75  }
+  50%  { opacity: .25 }
+  100% { transform: rotate(360deg); 
+         opacity: .75  }
+}
+
+@keyframes App-logo-spin-b {
+  0%   { transform: rotate(180deg); 
+         opacity: .75 }
+  50%  { opacity: .33 }
+  100% { transform: rotate(540deg); 
+         opacity: .75 }
+}
+
+@keyframes App-logo-spin-c {
+  0%   { transform: rotate(270deg); 
+         opacity: .5  }
+  50%  { opacity: .33 }
+  100% { transform: rotate(630deg); 
+         opacity: .5  }
+}
+
+@keyframes App-title-shift {
+  0% { left: 24.5% }
+  25% { left: 25.25% }
+  75% { left: 24% }
+  100% { left: 24.5% }
+}
+
+@keyframes App-border-glow {
+  0% { -webkit-text-stroke: 2px $color1 }
+  50% { -webkit-text-stroke: 2px $colorB }
+  100% { -webkit-text-stroke: 2px $color1 }
+}

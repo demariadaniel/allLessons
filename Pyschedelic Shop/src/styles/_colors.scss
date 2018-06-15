@@ -1,0 +1,64 @@
+html {
+  --color1: #E6F5F7;
+  --color0: #222;
+  --color000: #000;
+  --colorA: magenta;
+  --colorB: darkblue;
+  --colorC: #51BFB5;
+  --colorD: #9FE3DD;
+  --colorE: darkmagenta;
+  --colorF: #E3FEBE;
+  --colorG: deeppink;
+  transition: all 2s ease;
+}
+
+$color1 : var(--color1);
+$color0 : var(--color0);
+$color000 : var(--color000);
+$colorA : var(--colorA);
+$colorB : var(--colorB);
+$colorC : var(--colorC);
+$colorD : var(--colorD);
+$colorE : var(--colorE);
+$colorF : var(--colorF);
+$colorG : var(--colorG);
+
+.text--color1 {
+  color: $color1
+}
+
+.text--color0 {
+  color: $color0
+}
+
+.text--color000 {
+  color: $color000
+}
+
+.text--colorA {
+  color: $colorA
+}
+
+.text--colorB {
+  color: $colorB
+}
+
+.text--colorC {
+  color: $colorC
+}
+
+.text--colorD {
+  color: $colorD
+}
+
+.text--colorE {
+  color: $colorE
+}
+
+.text--colorF {
+  color: $colorF
+}
+
+.text--colorG {
+  color: $colorG
+}

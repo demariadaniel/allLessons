@@ -1,0 +1,160 @@
+@import 'colors';
+@import 'titles';
+
+a:visited {
+  color: $colorC
+}
+
+a:active {
+  color: $colorG
+}
+
+a {
+  color: $colorD;
+  transition: all 0.8s ease-out;
+}
+
+.App {
+  background: linear-gradient( $color000, $color0, $colorB );
+  text-align: center;
+  width: 100vw;
+  min-height: 125vh;
+  overflow: hidden;
+  transition: all 0.8s ease-out;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.btn {
+  position: relative;
+  z-index: 4;
+}
+
+.windows--neon {
+  position: relative;
+  border: 2px solid $colorE;
+  border-radius: 5px;
+  background-color: $color0;
+  transition: all 0.8s ease-out;
+}
+
+.transparent {
+  opacity: 0.9;
+}
+
+.left {
+  left: 0vw;
+}
+
+.right {
+  right: 0vw;
+}
+
+.cart, .theme {
+  position: absolute;
+  display: inline-block;
+  width: 10vw;
+  vertical-align: top;
+  z-index: 2;
+  padding-bottom: 2em;
+}
+
+.cart p {
+  margin-bottom: 0px;
+}
+
+nav {
+  background-color: $color0;
+  z-index: 4;
+  position: relative;
+  top: -2em;
+  border-bottom: 2px solid $colorE;
+  transition: all 0.8s ease-out;
+}
+
+.product--image {
+  height: 45vh;
+  position: relative;
+  left: -5vw;
+}
+
+.product--image__preview {
+  height: 15vh;
+  opacity: .7;
+}
+
+.product--text {
+  display: inline-block;
+  position: relative;
+  width: 25vw;
+  left: 5vw;
+  color: $colorD;
+  transition: all 0.8s ease-out;
+}
+
+.product--window {
+  margin: 0.5em 1em;
+  padding: 0.5em;
+  width: 10vw;
+  height: 25vh;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.8s ease-out;
+  z-index: 3;
+
+  p {
+    z-index: 3;
+    position: absolute;
+    top: -1em;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.4s ease-out;
+  }
+
+  img {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease-out;
+  }
+}
+
+.product--window:hover {
+  box-shadow: 0 0 10px #fff;
+
+  .product--image__preview {
+    height: 25vh;
+    opacity: 1;
+  }
+
+  p {
+    color: $colorF
+  }
+}
+
+.shopPage--container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  z-index: 2;
+}
+
+.shopPage--parent {
+  position: absolute;
+  display: inline-block;
+  width: 70vw;
+  min-height: 60vh;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+svg, g, circle, path  {
+  transition: all 0.8s ease-out;
+}
